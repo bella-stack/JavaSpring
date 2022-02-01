@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.Student;
+import java.util.UUID;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,14 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("api/student")
 public class StudentController {
   @GetMapping
-  @RequestMapping("/h1")
-  public String helloWorld1(){
-  return "hello world1";
-  }
-
-  @GetMapping
-  @RequestMapping("/h2")
-  public String helloWorld2(){
-    return "hello world2";
+  public Student helloWorld(){
+    Student s = new Student(UUID.randomUUID(),"test name");
+    return s;
   }
 }
